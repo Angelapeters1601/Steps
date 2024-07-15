@@ -1,4 +1,4 @@
-function Button({ isOpen, setIsOpen }) {
+function ToggleButton({ isOpen, setIsOpen }) {
   return (
     <button
       className="close"
@@ -9,4 +9,4 @@ function Button({ isOpen, setIsOpen }) {
   );
 }
 
-export default Button;
+export default ToggleButton;

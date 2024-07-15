@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Button from "./Button";
+import ToggleButton from "./ToggleButton";
+import NavigationButton from "./NavigationButton";
 
 const messages = [
   "Learn React ⚛️",
@@ -21,7 +22,7 @@ function Steps() {
 
   return (
     <>
-      <Button isOpen={isOpen} setIsOpen={setIsOpen} />
+      <ToggleButton isOpen={isOpen} setIsOpen={setIsOpen} />
       {isOpen && (
         <div className="steps">
           <div className="numbers">
@@ -33,18 +34,21 @@ function Steps() {
             Step {step}: {messages[step - 1]}
           </p>
           <div className="buttons">
-            <button
-              style={{ backgroundColor: "#7950F2", color: "#fff" }}
+            <NavigationButton
+              bgColor="#7950F2"
+              textColor="#fff"
               onClick={handlePrevious}
             >
+              <span>👈</span>
               Previous
-            </button>
-            <button
-              style={{ backgroundColor: "#7950F2", color: "#fff" }}
+            </NavigationButton>
+            <NavigationButton
+              bgColor="#7950F2"
+              textColor="#fff"
               onClick={handleNext}
             >
-              Next
-            </button>
+              Next <span>👉</span>
+            </NavigationButton>
           </div>
         </div>
       )}
